@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyNestedLayouts</string>
+    <string name="bioDesc">My name is Santhosh Banala
+Another place where you can find plain text is input forms in websites and apps.
+        Many social media websites, such as Twitter and Instagram, only let you post captions and tweets as plain text,
+        although there are some exceptions, such as hashtags and emoji.
+        Therefore, you cannot add any additional formatting to these elements. They are automatically formatted according
+        to the standards of the website or app. Older email clients also often have plain text modes, allowing you to
+        send messages in plain text.
+    </string>
+    <string name="headTextstring">Banala</string>
+    <string name="textViewhint">What is your name?</string>
+    <string name="btnText">Done</string>
+</resources>
