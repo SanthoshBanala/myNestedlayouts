@@ -14,26 +14,26 @@ import androidx.databinding.DataBindingUtil
 import com.example.mynestedlayouts.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=DataBindingUtil.setContentView(this, R.layout.activity_main)
-        //setContentView(R.layout.activity_main)
-        //findViewById<Button>(R.id.btnToConfirm).setOnClickListener{
-        //    addNickname(it)
-        //}
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.btnToConfirm.setOnClickListener {
             addNickname(it)
         }
     }
-    private fun addNickname (view:View){
-        binding.textToConfirm.text=binding.enterUrname.text
-        binding.enterUrname.visibility=View.GONE
-        binding.btnToConfirm.visibility=View.GONE
-        binding.textToConfirm.visibility=View.VISIBLE
 
-        val imn = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imn.hideSoftInputFromWindow(view.windowToken,0)
+    private fun addNickname(view: View) {
+        binding.apply {
+            textToConfirm.text = enterUrname.text
+            invalidateAll()
+            enterUrname.visibility = View.GONE
+            btnToConfirm.visibility = View.GONE
+            textToConfirm.visibility = View.VISIBLE
+
+            val imn = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imn.hideSoftInputFromWindow(view.windowToken, 0)
+        }
 
     }
 }
